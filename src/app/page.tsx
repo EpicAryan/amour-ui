@@ -1,9 +1,10 @@
+import { HeroAmourUI } from "@/components/hero";
 
 
 export default function Home() {
   return (
     <div className="">
-      Hello World
+      <HeroAmourUI/>
     </div>
   );
 }
