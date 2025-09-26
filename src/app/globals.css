@@ -136,3 +136,13 @@ body::-webkit-scrollbar {
 .component-sidebar [data-sidebar="sidebar"] {
   background: linear-gradient(180deg, #0C1331 0%, #0A1028 55%, #070B1A 100%) !important;
 }
+
+.responsive-width {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .responsive-width {
+    width: calc(100vw - 18rem);
+  }
+}

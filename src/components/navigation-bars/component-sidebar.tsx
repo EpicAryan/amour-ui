@@ -12,7 +12,7 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
 } from '@/components/ui/sidebar';
-import { Badge, Box, BoxSelect, Braces, GitBranch, Home, List, Section, Square, Wand2 } from 'lucide-react';
+import { Badge, Box, BoxSelect, Braces, GitBranch, Home, List, Section, Square, WalletCardsIcon, Wand2 } from 'lucide-react';
 import Link from 'next/link';
 
 const ungrouped = [
@@ -34,8 +34,12 @@ const cards = [
   { title: 'Layout Card', href: '/components/layout-card', icon: Badge },
 ];
 
-const misc = [
+const parallax = [
   { title: 'Parallax Section', href: '/components/parallax-section', icon: Section},
+  { title: 'Parallax Card', href: '/components/parallax-card', icon: WalletCardsIcon},
+];
+
+const misc = [
   { title: 'Accordion', href: '#', icon: List },
   { title: 'Navigation', href: '#', icon: GitBranch },
   { title: 'Code Blocks', href: '#', icon: Braces },
@@ -126,6 +130,28 @@ export function ComponentSidebar() {
             <SidebarGroupContent>
               <SidebarMenu>
                 {cards.map((i) => (
+                  <SidebarMenuItem key={i.title}>
+                    <SidebarMenuButton asChild className='text-white'>
+                      <Link href={i.href}>
+                        <i.icon className="size-4" />
+                        <span>{i.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </div>
+        </SidebarGroup>
+
+        <SidebarGroup className="">
+          <SidebarGroupLabel className="font-medium uppercase tracking-wider text-white">
+            Parallax
+          </SidebarGroupLabel>
+          <div className="relative pl-3 before:absolute before:inset-y-2 before:left-2 before:w-px before:bg-white/50">
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {parallax.map((i) => (
                   <SidebarMenuItem key={i.title}>
                     <SidebarMenuButton asChild className='text-white'>
                       <Link href={i.href}>

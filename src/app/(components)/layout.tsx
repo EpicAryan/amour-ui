@@ -23,8 +23,8 @@ export default function RootLayout({
             <div className="sticky lg:hidden top-0 z-20 flex items-center px-4 py-4">
               <SidebarTrigger className="h-8 w-8 rounded-md  border text-black bg-white/80" />
             </div>
-            <main className="w-full"
-              style={{ width: "calc(100vw - 18rem)" }}
+            <main className="responsive-width"
+              
             >
               {children}
             </main>
