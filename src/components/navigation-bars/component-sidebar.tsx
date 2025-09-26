@@ -1,4 +1,3 @@
-
 'use client';
 
 import {
@@ -13,7 +12,7 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
 } from '@/components/ui/sidebar';
-import { Badge, Box, BoxSelect, Braces, GitBranch, Home, List, Square, Wand2 } from 'lucide-react';
+import { Badge, Box, BoxSelect, Braces, GitBranch, Home, List, Section, Square, Wand2 } from 'lucide-react';
 import Link from 'next/link';
 
 const ungrouped = [
@@ -32,9 +31,11 @@ const cards = [
   { title: 'Basic', href: '#', icon: Box },
   { title: 'With Image', href: '#', icon: BoxSelect },
   { title: 'Pricing', href: '#', icon: Badge },
+  { title: 'Layout Card', href: '/components/layout-card', icon: Badge },
 ];
 
 const misc = [
+  { title: 'Parallax Section', href: '/components/parallax-section', icon: Section},
   { title: 'Accordion', href: '#', icon: List },
   { title: 'Navigation', href: '#', icon: GitBranch },
   { title: 'Code Blocks', href: '#', icon: Braces },
@@ -42,7 +43,7 @@ const misc = [
 
 export function ComponentSidebar() {
   return (
-    <Sidebar collapsible="icon" side="left"  className="component-sidebar overflow-x-hidden border-r border-white/50">
+    <Sidebar collapsible="icon" side="left"  className="component-sidebar overflow-x-hidden box-border border-r border-white/50">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

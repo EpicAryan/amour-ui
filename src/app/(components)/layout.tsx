@@ -20,10 +20,14 @@ export default function RootLayout({
         <ComponentSidebar/>
          <div className="min-h-screen">
             {/* Top bar */}
-            <div className="sticky md:hidden top-0 z-20 flex items-center px-4 py-4">
+            <div className="sticky lg:hidden top-0 z-20 flex items-center px-4 py-4">
               <SidebarTrigger className="h-8 w-8 rounded-md  border text-black bg-white/80" />
             </div>
-            <main className="w-full">{children}</main>
+            <main className="w-full"
+              style={{ width: "calc(100vw - 18rem)" }}
+            >
+              {children}
+            </main>
           </div>
         </SidebarProvider>
       </body>
