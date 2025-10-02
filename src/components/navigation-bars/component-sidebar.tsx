@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Sidebar,
@@ -11,53 +11,84 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarTrigger,
-} from '@/components/ui/sidebar';
-import { Badge, Box, BoxSelect, Braces, GitBranch, Home, List, Section, Square, WalletCardsIcon, Wand2 } from 'lucide-react';
-import Link from 'next/link';
+} from "@/components/ui/sidebar";
+import {
+  Badge,
+  Braces,
+  GalleryHorizontal,
+  GitBranch,
+  Home,
+  List,
+  Section,
+  Square,
+  WalletCardsIcon,
+  Wand2,
+} from "lucide-react";
+import Link from "next/link";
 
-const ungrouped = [
-  { title: 'Overview', href: '#', icon: Home },
-];
+const ungrouped = [{ title: "Overview", href: "#", icon: Home }];
 
 const buttons = [
-  { title: 'Primary', href: '#', icon: Square },
-  { title: 'Secondary', href: '#', icon: Square },
-  { title: 'Ghost', href: '#', icon: Square },
-  { title: 'Outline', href: '#', icon: Square },
-  { title: 'Icon', href: '#', icon: Wand2 },
+  { title: "Primary", href: "#", icon: Square },
+  { title: "Secondary", href: "#", icon: Square },
+  { title: "Ghost", href: "#", icon: Square },
+  { title: "Outline", href: "#", icon: Square },
+  { title: "Icon", href: "#", icon: Wand2 },
 ];
 
 const cards = [
-  { title: 'Basic', href: '#', icon: Box },
-  { title: 'With Image', href: '#', icon: BoxSelect },
-  { title: 'Pricing', href: '#', icon: Badge },
-  { title: 'Layout Card', href: '/components/layout-card', icon: Badge },
+  {
+    title: "Swipe Card",
+    href: "/components/swipe-card",
+    icon: GalleryHorizontal,
+  },
+  {
+    title: "Deck Card",
+    href: "/components/deck-card",
+    icon: GalleryHorizontal,
+  },
+  { title: "Layout Card", href: "/components/layout-card", icon: Badge },
 ];
 
 const parallax = [
-  { title: 'Parallax Section', href: '/components/parallax-section', icon: Section},
-  { title: 'Parallax Card', href: '/components/parallax-card', icon: WalletCardsIcon},
+  {
+    title: "Parallax Section",
+    href: "/components/parallax-section",
+    icon: Section,
+  },
+  {
+    title: "Parallax Card",
+    href: "/components/parallax-card",
+    icon: WalletCardsIcon,
+  },
 ];
 
 const misc = [
-  { title: 'Accordion', href: '#', icon: List },
-  { title: 'Navigation', href: '#', icon: GitBranch },
-  { title: 'Code Blocks', href: '#', icon: Braces },
+  { title: "Accordion", href: "#", icon: List },
+  { title: "Navigation", href: "#", icon: GitBranch },
+  { title: "Code Blocks", href: "#", icon: Braces },
 ];
 
 export function ComponentSidebar() {
   return (
-    <Sidebar collapsible="icon" side="left"  className="component-sidebar overflow-x-hidden box-border border-r border-white/50">
+    <Sidebar
+      collapsible="icon"
+      side="left"
+      className="component-sidebar box-border overflow-x-hidden border-r border-white/50"
+    >
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="pointer-events-none absolute inset-0"
         style={{
-          background: 'linear-gradient(180deg, #0C1331 0%, #0A1028 55%, #070B1A 100%)',
+          background:
+            "linear-gradient(180deg, #0C1331 0%, #0A1028 55%, #070B1A 100%)",
         }}
       />
-      <SidebarHeader className="px-3 py-3 relative z-10">
+      <SidebarHeader className="relative z-10 px-3 py-3">
         {/* Workspace / logo + mobile trigger */}
         <div className="flex items-center gap-2">
-          <span className="font-semibold tracking-tight text-white">AmourUI</span>
+          <span className="font-semibold tracking-tight text-white">
+            AmourUI
+          </span>
           <div className="ml-auto lg:hidden">
             <SidebarTrigger className="h-8 w-8 rounded-md bg-white/80" />
           </div>
@@ -78,7 +109,6 @@ export function ComponentSidebar() {
         </div> */}
       </SidebarHeader>
 
-
       <SidebarContent className="px-2">
         {/* Ungrouped items */}
         <SidebarGroup>
@@ -86,7 +116,7 @@ export function ComponentSidebar() {
             <SidebarMenu>
               {ungrouped.map((i) => (
                 <SidebarMenuItem key={i.title}>
-                  <SidebarMenuButton asChild className='text-white'>
+                  <SidebarMenuButton asChild className="text-white">
                     <Link href={i.href}>
                       <i.icon className="size-4" />
                       <span>{i.title}</span>
@@ -100,7 +130,7 @@ export function ComponentSidebar() {
 
         {/* Buttons group */}
         <SidebarGroup className="">
-          <SidebarGroupLabel className="font-medium uppercase tracking-wider text-white">
+          <SidebarGroupLabel className="font-medium tracking-wider text-white uppercase">
             Buttons
           </SidebarGroupLabel>
           <div className="relative pl-3 before:absolute before:inset-y-2 before:left-2 before:w-px before:bg-white/50">
@@ -108,7 +138,7 @@ export function ComponentSidebar() {
               <SidebarMenu>
                 {buttons.map((i) => (
                   <SidebarMenuItem key={i.title}>
-                    <SidebarMenuButton asChild className='text-white'>
+                    <SidebarMenuButton asChild className="text-white">
                       <Link href={i.href}>
                         <i.icon className="size-4" />
                         <span>{i.title}</span>
@@ -123,7 +153,7 @@ export function ComponentSidebar() {
 
         {/* Cards group */}
         <SidebarGroup className="">
-          <SidebarGroupLabel className="font-medium uppercase tracking-wider text-white">
+          <SidebarGroupLabel className="font-medium tracking-wider text-white uppercase">
             Cards
           </SidebarGroupLabel>
           <div className="relative pl-3 before:absolute before:inset-y-2 before:left-2 before:w-px before:bg-white/50">
@@ -131,7 +161,7 @@ export function ComponentSidebar() {
               <SidebarMenu>
                 {cards.map((i) => (
                   <SidebarMenuItem key={i.title}>
-                    <SidebarMenuButton asChild className='text-white'>
+                    <SidebarMenuButton asChild className="text-white">
                       <Link href={i.href}>
                         <i.icon className="size-4" />
                         <span>{i.title}</span>
@@ -145,7 +175,7 @@ export function ComponentSidebar() {
         </SidebarGroup>
 
         <SidebarGroup className="">
-          <SidebarGroupLabel className="font-medium uppercase tracking-wider text-white">
+          <SidebarGroupLabel className="font-medium tracking-wider text-white uppercase">
             Parallax
           </SidebarGroupLabel>
           <div className="relative pl-3 before:absolute before:inset-y-2 before:left-2 before:w-px before:bg-white/50">
@@ -153,7 +183,7 @@ export function ComponentSidebar() {
               <SidebarMenu>
                 {parallax.map((i) => (
                   <SidebarMenuItem key={i.title}>
-                    <SidebarMenuButton asChild className='text-white'>
+                    <SidebarMenuButton asChild className="text-white">
                       <Link href={i.href}>
                         <i.icon className="size-4" />
                         <span>{i.title}</span>
@@ -168,7 +198,7 @@ export function ComponentSidebar() {
 
         {/* Another non-collapsible group */}
         <SidebarGroup className="">
-          <SidebarGroupLabel className="font-medium uppercase tracking-wider text-white">
+          <SidebarGroupLabel className="font-medium tracking-wider text-white uppercase">
             Misc
           </SidebarGroupLabel>
           <div className="relative pl-3 before:absolute before:inset-y-2 before:left-2 before:w-px before:bg-white/50">
@@ -176,7 +206,7 @@ export function ComponentSidebar() {
               <SidebarMenu>
                 {misc.map((i) => (
                   <SidebarMenuItem key={i.title}>
-                    <SidebarMenuButton asChild className='text-white'>
+                    <SidebarMenuButton asChild className="text-white">
                       <Link href={i.href}>
                         <i.icon className="size-4" />
                         <span>{i.title}</span>
